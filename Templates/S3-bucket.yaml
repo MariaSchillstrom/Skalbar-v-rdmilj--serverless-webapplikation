@@ -40,3 +40,5 @@ Resources:
           Effect: "Allow"
           Principal: "*"
           Sid: "PublicReadGetObject"
+
+
