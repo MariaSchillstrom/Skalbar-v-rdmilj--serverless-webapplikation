@@ -1,5 +1,5 @@
-## Introduktion/Bakgrund
 
-Som jag nämnde i inlämning del 1 så antog vi där att en färdig MVC-applikation redan existerade innan vi satte upp Docker Swarm-infrastrukturen. I verkligheten är detta inte det mest praktiska arbetsflödet.
 
-I denna rapport (del 2) utforskar jag det alternativa tillvägagångssättet där frontend och backend separeras, med frontend hostad på AWS S3. Detta möjliggör snabba uppdateringar av användargränssnittet utan container-rebuilds, vilket är mer lämpat för aktiv utveckling.
+
+**Note:** 
+I Inlämning Del 1 byggde jag MVC-applikationen under tutorialens gång men "färdigställde" den (i praktiken en enkel Nginx välkomstsida) innan deploy-steget. I denna Del 2 utökar jag lösningen med serverless-komponenter (AWS Lambda och DynamoDB) för att hantera datahändelser event-drivet, vilket gör systemet mer skalbart och mindre beroende av kontinuerligt körande containrar.
