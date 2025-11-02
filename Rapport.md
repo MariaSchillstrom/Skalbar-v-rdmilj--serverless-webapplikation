@@ -106,5 +106,17 @@ aws cloudformation create-stack \
 ```
 
 
+# 3. Lambda och API Gateway
 
 
+## Lambda Function och API Gateway
+
+Jag följde steg 3-5 i uppgiftsinstruktionerna för att skapa Lambda-funktionen och API Gateway manuellt. Därefter genererade jag en CloudFormation-template via IaC Generator för att automatisera deploymentet.
+
+Se [instruktioner](./Templates/Steg3-5-Lambda-API-Tutorial.pdf)
+
+Se [lambda-api-template.yaml](./Templates/lambda-api.yaml)
+
+### Verifiering
+Efter deployment via CloudFormation verifierades att webbsidan kunde anropa Lambda-funktionen via API Gateway.
+[Screenshot]
