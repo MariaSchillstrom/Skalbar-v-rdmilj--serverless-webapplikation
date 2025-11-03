@@ -6,16 +6,29 @@
 </head>
 <body>
     <h1>Välkommen till Svampregistret!</h1>
-    
-    <p id="greeting">Loading...</p>
+
+    <ul id="svampLista">
+        <li>Loading...</li>
+    </ul>
     
     <script>
-        async function fetchGreeting() {
+        async function fetchSvampar() {
             const response = await fetch('https://09qqcalmx5.execute-api.eu-west-1.amazonaws.com/default/Svampregister');
-            const responseBody = await response.text();
-            document.getElementById('greeting').innerText = responseBody;
+            const svampar = await response.json();
+            
+            const lista = document.getElementById('svampLista');
+            lista.innerHTML = '';
+            
+            svampar.forEach(svamp => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <strong>${svamp.svampnamn}</strong>: ${svamp.beskrivning}<br>
+                    ${svamp.bildUrl ? `<img src="${svamp.bildUrl}" width="200" alt="${svamp.svampnamn}">` : ''}
+                `;
+                lista.appendChild(listItem);
+            });
         }
-        fetchGreeting();
+        fetchSvampar();
     </script>
 </body>
 </html>

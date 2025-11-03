@@ -158,6 +158,8 @@ Projektet består av följande templates:
 - Lambda permissions för API Gateway invoke
 - Se: `Templates/lambda-api.yaml`
 
+**För resterande delar har jag valt en manuell uppsättning**
+
 ### 3.3 Deployment
 
 **Deployment via AWS CLI:**
@@ -236,6 +238,10 @@ Vid högre trafik (1M requests/månad):
 - [ ] Implementera automated testing
 - [ ] Blue/green deployment strategi
 - [ ] Staging miljö för testning
+  
+  ### 5.5 Infrastructure as Code
+
+- [ ] Applicera Iac på alla moment där det är möjligt
 
 ---
 
