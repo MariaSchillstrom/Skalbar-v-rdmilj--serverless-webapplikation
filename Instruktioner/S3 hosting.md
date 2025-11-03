@@ -6,7 +6,6 @@ Därefter har jag tagit bort den manuella set-upen och skapat en ny via template
 
 Under inlämning 1 finns en instruction om hur du använder Iac generator. 
 
-Steg för steg, den manuella uppsättningen finns under templates 
 
 ## 2.1 Skapa S3 bucket
 
@@ -42,10 +41,6 @@ https://i.imgur.com/CCZNgah.png
 
 
 ## 2.4 Fixa publika rättigheter
-
-
-
-
 
 
 - Gå till "Permissions"
