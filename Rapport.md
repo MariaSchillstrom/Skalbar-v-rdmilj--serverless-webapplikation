@@ -22,6 +22,8 @@ Applikationen följer en serverless arkitektur med följande komponenter:
 
 ![Arkitekturdiagram](Images/Arkitektur.png)
 
+<div style="page-break-before: always;"></div>
+
 
 
 
@@ -72,6 +74,9 @@ PublicAccessBlockConfiguration:
   BlockPublicAcls: false
 ```
 
+<div style="page-break-before: always;"></div>
+
+
 ### 2.2 API Gateway Security
 
 **Nuvarande konfiguration:**
@@ -117,7 +122,8 @@ Lambda-funktionen har en execution role med minimal behörighet:
 - För produktionsmiljö: specificera exakta domains
 - CORS är en browser security feature - ger inte server-side säkerhet
 
----
+<div style="page-break-before: always;"></div>
+
 
 ## 3. Infrastructure as Code
 
@@ -211,7 +217,8 @@ Vid högre trafik (1M requests/månad):
 - EC2 t3.micro (always-on): ~$8.50/månad
 - Serverless är kostnadseffektivare vid låg/varierande trafik
 
----
+<div style="page-break-before: always;"></div>
+
 
 ## 5. Förbättringsområden
 
@@ -257,7 +264,8 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 - CORS-konfiguration krävs för cross-origin requests
 - Deployment automation är kritiskt för reproducerbarhet
 
----
+<div style="page-break-before: always;"></div>
+
 
 ## 7. Referenser och Dokumentation
 
