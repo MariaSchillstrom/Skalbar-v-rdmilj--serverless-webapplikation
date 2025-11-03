@@ -4,7 +4,42 @@
 **Student:** Maria Schillström  
 **Datum:** November 2025
 
----
+
+<div style="page-break-before: always;"></div>
+
+# Innehållsförteckning
+
+
+- [Serverless Webbapplikation - Rapport](#serverless-webbapplikation---rapport)
+- [Innehållsförteckning](#innehållsförteckning)
+  - [1. Arkitektur](#1-arkitektur)
+    - [1.1 Översikt](#11-översikt)
+    - [1.2 Arkitekturdiagram](#12-arkitekturdiagram)
+    - [1.3 Dataflöde](#13-dataflöde)
+    - [1.4 Skalbarhet](#14-skalbarhet)
+  - [2. Säkerhet](#2-säkerhet)
+    - [2.1 S3 Bucket Security](#21-s3-bucket-security)
+    - [2.2 API Gateway Security](#22-api-gateway-security)
+    - [2.3 Lambda Security](#23-lambda-security)
+    - [2.4 CORS-konfiguration](#24-cors-konfiguration)
+  - [3. Infrastructure as Code](#3-infrastructure-as-code)
+    - [3.1 Metodik](#31-metodik)
+    - [3.2 CloudFormation Templates](#32-cloudformation-templates)
+    - [3.3 Deployment](#33-deployment)
+  - [4. Kostnadanalys](#4-kostnadanalys)
+    - [4.1 Estimerad månadskostnad (låg trafik)](#41-estimerad-månadskostnad-låg-trafik)
+    - [4.2 Skalningskostnader](#42-skalningskostnader)
+  - [5. Förbättringsområden](#5-förbättringsområden)
+    - [5.1 Säkerhet](#51-säkerhet)
+    - [5.2 Prestanda](#52-prestanda)
+    - [5.3 Monitoring](#53-monitoring)
+    - [5.4 CI/CD](#54-cicd)
+  - [6. Slutsats](#6-slutsats)
+  - [7. Referenser och Dokumentation](#7-referenser-och-dokumentation)
+
+
+<div style="page-break-before: always;"></div>
+
 
 ## 1. Arkitektur
 
