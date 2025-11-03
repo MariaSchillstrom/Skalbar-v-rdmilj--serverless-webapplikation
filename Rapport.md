@@ -8,6 +8,8 @@
 
 ## 1. Arkitektur
 
+
+
 ### 1.1 Översikt
 
 Applikationen följer en serverless arkitektur med följande komponenter:
@@ -19,18 +21,10 @@ Applikationen följer en serverless arkitektur med följande komponenter:
 
 ### 1.2 Arkitekturdiagram
 
-```
-┌─────────────┐         ┌──────────────┐         ┌─────────────┐
-│   Browser   │ ─────>  │  S3 Bucket   │         │   Lambda    │
-│             │ HTTP    │ (Static Web) │         │  Function   │
-└─────────────┘         └──────────────┘         └─────────────┘
-       │                                                  ▲
-       │                                                  │
-       │                ┌──────────────┐                 │
-       └─────────────>  │ API Gateway  │ ────────────────┘
-          HTTPS         │  (REST API)  │      Invoke
-                        └──────────────┘
-```
+
+![Arkitekturdiagram](Images/Arkitektur.png)
+
+
 
 ### 1.3 Dataflöde
 
