@@ -1,6 +1,15 @@
+
+**Denna tutorial är baserad på lärarens, men har modifierats samt uppdaterats av mig**
+
+**Efter denna manuella uppsättning skapade jag en CloudFormation template, raderade de manuella resurserna och skapade om dem via lambda-api-gateway.yaml**
+
 # Steg 3-5: Lambda Function, API Gateway och CORS
 
 *Uppdaterad tutorial baserad på AWS Console 2024/2025*
+
+
+
+---
 
 ## Steg 3: Skapa en Lambda Function
 
@@ -209,6 +218,9 @@ def lambda_handler(event, context):
 
 **✅ Klart!** Din serverless webbapplikation fungerar nu!
 
+
+https://i.imgur.com/4OvqIoM.png
+
 ---
 
 ## Sammanfattning av vad vi skapade
@@ -238,6 +250,49 @@ def lambda_handler(event, context):
 ### Problem: Ingen metod i API Gateway
 - **Lösning:** Skapa metoden manuellt enligt steg 4.3
 
+## Verifiering - Manuell Setup
+
+[Bild på webbsidan med "Hello from Lambda!" från manuella resurser]
+
 ---
+
+## Infrastructure as Code - CloudFormation
+
+Efter manuell verifiering skapades en CloudFormation template för att automatisera deploymentet.
+
+### CloudFormation Template
+Se [lambda-api-gateway.yaml](./lambda-api-gateway.yaml)
+
+### Deployment via CloudFormation
+```bash
+aws cloudformation create-stack \
+  --stack-name svampregistret2-lambda-api-stack \
+  --template-body file://lambda-api-gateway.yaml \
+  --capabilities CAPABILITY_NAMED_IAM \
+  --region eu-west-1
+```
+
+### Verifiering - CloudFormation Deployment
+
+**CloudFormation Stack Status:**
+
+https://i.imgur.com/dpH9OWd.png
+
+**Cloudformation Outputs**
+
+https://i.imgur.com/XgZgXWG.png
+
+**Fungerande applikation:**
+
+https://i.imgur.com/4OvqIoM.png
+
+
+**API Gateway URL från CloudFormation Outputs:**
+```
+https://09qqcalmx5.execute-api.eu-west-1.amazonaws.com/default/Svampregister
+```
+
+
+
 
 
