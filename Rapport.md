@@ -253,6 +253,7 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 - IaC Generator förenklar CloudFormation-skapande
 - CORS-konfiguration krävs för cross-origin requests
 - Deployment automation är kritiskt för reproducerbarhet
+- Implementera CI/CD för att manuellt slippa uppdatera index vid varje ändring på din S3. 
 
 ---
 
@@ -260,7 +261,7 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 
 **Detaljerade instruktioner:**
 - [S3 Hosting Setup](./Instruktioner/S3-hosting.md)
-- [Lambda och API Gateway Tutorial](./Instruktioner/Steg3-5-Lambda-API-Tutorial.pdf)
+- [Lambda och API Gateway Tutorial](./Instruktioner/Steg3-5-Lambda-API-Tutorial.md)
 
 **CloudFormation Templates:**
 - [S3 Bucket Template](./Templates/s3-bucket.yaml)
@@ -269,8 +270,8 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 **GitHub Repository:**
 https://github.com/MariaSchillstrom/Skalbar-v-rdmilj--serverless-webapplikation
 
-**Tutorials lärare**
 
+**Tutorials lärare**
 
 
 https://cloud-developer.educ8.se/clo/3.-scalable-cloud-applications/1.-tutorials/6.-create-a-serverless-webapp-on-aws-greetings/index.html
