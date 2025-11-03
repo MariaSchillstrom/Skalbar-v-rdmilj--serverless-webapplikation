@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.8">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="1963" dy="887" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1962" dy="887" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -111,9 +111,6 @@
         <mxCell id="xX48_kaocdxkzJORoY4O-20" value="" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;strokeWidth=1;align=center;outlineConnect=0;dashed=0;outlineConnect=0;shape=mxgraph.aws3d.dynamoDb;fillColor=#ECECEC;strokeColor=#5E5E5E;aspect=fixed;strokeColor2=#292929;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="1040" y="550" width="112.36" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="xX48_kaocdxkzJORoY4O-21" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Table:Svampar&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;PK:svampnamn&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="1066.18" y="610" width="60" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="xX48_kaocdxkzJORoY4O-30" value="" style="html=1;labelBackgroundColor=#ffffff;startArrow=none;startFill=0;startSize=6;endArrow=classic;endFill=1;endSize=6;jettySize=auto;orthogonalLoop=1;strokeWidth=1;dashed=1;fontSize=14;rounded=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="xX48_kaocdxkzJORoY4O-20">
           <mxGeometry width="60" height="60" relative="1" as="geometry">
             <mxPoint x="890" y="390" as="sourcePoint" />
@@ -122,6 +119,9 @@
         </mxCell>
         <mxCell id="xX48_kaocdxkzJORoY4O-36" value="&lt;ol data-start=&quot;143&quot; data-end=&quot;592&quot;&gt;&lt;li data-start=&quot;143&quot; data-end=&quot;217&quot;&gt;&lt;p data-start=&quot;146&quot; data-end=&quot;217&quot;&gt;&lt;strong data-start=&quot;146&quot; data-end=&quot;168&quot;&gt;Browser (Frontend)&lt;/strong&gt; laddar statisk webbplats från &lt;strong data-start=&quot;199&quot; data-end=&quot;205&quot;&gt;S3&lt;/strong&gt; via HTTP.&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;218&quot; data-end=&quot;303&quot;&gt;&lt;p data-start=&quot;221&quot; data-end=&quot;303&quot;&gt;&lt;strong data-start=&quot;221&quot; data-end=&quot;229&quot;&gt;AJAX&lt;/strong&gt; i webbläsaren skickar &lt;strong data-start=&quot;252&quot; data-end=&quot;273&quot;&gt;HTTPS (JSON/REST)&lt;/strong&gt;-anrop till &lt;strong data-start=&quot;285&quot; data-end=&quot;300&quot;&gt;API Gateway&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;304&quot; data-end=&quot;389&quot;&gt;&lt;p data-start=&quot;307&quot; data-end=&quot;389&quot;&gt;&lt;strong data-start=&quot;307&quot; data-end=&quot;322&quot;&gt;API Gateway&lt;/strong&gt; &lt;strong data-start=&quot;323&quot; data-end=&quot;336&quot;&gt;invokerar&lt;/strong&gt; (anropar) &lt;strong data-start=&quot;347&quot; data-end=&quot;361&quot;&gt;AWS Lambda&lt;/strong&gt;, som kör backend-logiken.&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;390&quot; data-end=&quot;492&quot;&gt;&lt;p data-start=&quot;393&quot; data-end=&quot;492&quot;&gt;&lt;strong data-start=&quot;393&quot; data-end=&quot;403&quot;&gt;Lambda&lt;/strong&gt; har en &lt;strong data-start=&quot;411&quot; data-end=&quot;423&quot;&gt;IAM Role&lt;/strong&gt; som ger åtkomst till &lt;strong data-start=&quot;445&quot; data-end=&quot;489&quot;&gt;DynamoDB (Table: Svampar, PK: svampnamn)&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;&lt;li data-start=&quot;493&quot; data-end=&quot;592&quot;&gt;&lt;p data-start=&quot;496&quot; data-end=&quot;592&quot;&gt;&lt;strong data-start=&quot;496&quot; data-end=&quot;506&quot;&gt;Lambda&lt;/strong&gt; returnerar data till &lt;strong data-start=&quot;528&quot; data-end=&quot;543&quot;&gt;API Gateway&lt;/strong&gt;, som skickar svaret tillbaka till webbläsaren.&lt;/p&gt;&lt;br&gt;&lt;/li&gt;&lt;br&gt;&lt;/ol&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="13" y="672.5" width="400" height="417.5" as="geometry" />
+        </mxCell>
+        <mxCell id="xX48_kaocdxkzJORoY4O-37" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Dynamo DB&lt;/b&gt;&lt;/font&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="1066.18" y="630" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

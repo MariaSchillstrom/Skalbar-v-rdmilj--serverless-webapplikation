@@ -8,8 +8,6 @@
 
 ## 1. Arkitektur
 
-
-
 ### 1.1 Översikt
 
 Applikationen följer en serverless arkitektur med följande komponenter:
@@ -17,12 +15,13 @@ Applikationen följer en serverless arkitektur med följande komponenter:
 - **S3 Bucket:** Hostar den statiska webbsidan (HTML, CSS, JavaScript)
 - **API Gateway:** REST API som exponerar endpoints för frontend
 - **Lambda Function:** Serverless backend-logik som exekveras on-demand
+- **DynamoDB:** NoSQL-databas för att lagra applikationsdata
 - **IAM Roles:** Hanterar behörigheter mellan tjänsterna
 
 ### 1.2 Arkitekturdiagram
 
-
 ![Arkitekturdiagram](Images/Arkitektur.png)
+
 
 
 
@@ -32,9 +31,10 @@ Applikationen följer en serverless arkitektur med följande komponenter:
 2. Webbläsaren laddar `index.html` från S3
 3. JavaScript i sidan gör ett HTTPS-anrop till API Gateway
 4. API Gateway triggar Lambda-funktionen
-5. Lambda exekverar backend-logik och returnerar svar
-6. API Gateway skickar svar tillbaka till webbläsaren
-7. JavaScript uppdaterar sidan med svaret
+5. Lambda läser/skriver data från/till DynamoDB
+6. Lambda returnerar data till API Gateway
+7. API Gateway skickar svar tillbaka till webbläsaren
+8. JavaScript uppdaterar sidan med data från DynamoDB
 
 ### 1.4 Skalbarhet
 
@@ -89,6 +89,7 @@ PublicAccessBlockConfiguration:
 **IAM Role:**
 Lambda-funktionen har en execution role med minimal behörighet:
 - CloudWatch Logs (för logging)
+- DynamoDB Read Access (för att hämta svampdata)
 - Inga extra permissions utöver nödvändiga
 
 **Best practices:**
@@ -146,13 +147,18 @@ Projektet består av följande templates:
 
 **Lambda och API Gateway:**
 - Lambda function med Python runtime
-- IAM execution role
+- IAM execution role med DynamoDB read permissions
 - API Gateway REST API
 - API Gateway resources, methods och deployment
 - Lambda permissions för API Gateway invoke
 - Se: `Templates/lambda-api.yaml`
 
-**För resterande delar har jag valt en manuell uppsättning**
+**DynamoDB:**
+- DynamoDB-tabellen (`Svampar`) skapades manuellt
+- Partition key: `svampnamn` (String)
+- Lambda-funktionen har IAM-permissions för att läsa från tabellen via `AmazonDynamoDBReadOnlyAccess` policy
+
+**Framtida förbättring:** Implementera DynamoDB via CloudFormation för full IaC-deployment.
 
 ### 3.3 Deployment
 
@@ -232,10 +238,6 @@ Vid högre trafik (1M requests/månad):
 - [ ] Implementera automated testing
 - [ ] Blue/green deployment strategi
 - [ ] Staging miljö för testning
-  
-  ### 5.5 Infrastructure as Code
-
-- [ ] Applicera Iac på alla moment där det är möjligt
 
 ---
 
@@ -245,6 +247,7 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 - ✅ Static web hosting via S3
 - ✅ Serverless backend via Lambda
 - ✅ API management via API Gateway
+- ✅ NoSQL-databas med DynamoDB
 - ✅ Infrastructure as Code med CloudFormation
 - ✅ Kostnadseffektiv och skalbar lösning
 
@@ -253,7 +256,6 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 - IaC Generator förenklar CloudFormation-skapande
 - CORS-konfiguration krävs för cross-origin requests
 - Deployment automation är kritiskt för reproducerbarhet
-- Implementera CI/CD för att manuellt slippa uppdatera index vid varje ändring på din S3. 
 
 ---
 
@@ -262,6 +264,8 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 **Detaljerade instruktioner:**
 - [S3 Hosting Setup](./Instruktioner/S3-hosting.md)
 - [Lambda och API Gateway Tutorial](./Instruktioner/Steg3-5-Lambda-API-Tutorial.md)
+- [DynamoDB Setup](./Instruktioner/6-DynamoDB-Setup.md)
+- [Lambda DynamoDB Integration](./Instruktioner/7-8-Lambda-DynamoDB-Integration.md)
 
 **CloudFormation Templates:**
 - [S3 Bucket Template](./Templates/s3-bucket.yaml)
@@ -270,14 +274,9 @@ Projektet demonstrerar en fungerande serverless arkitektur med:
 **GitHub Repository:**
 https://github.com/MariaSchillstrom/Skalbar-v-rdmilj--serverless-webapplikation
 
-
-**Tutorials lärare**
-
-
-https://cloud-developer.educ8.se/clo/3.-scalable-cloud-applications/1.-tutorials/6.-create-a-serverless-webapp-on-aws-greetings/index.html
+**Baserad på:**
+Uppgiftsinstruktioner från kursen (med uppdateringar för AWS Console 2024/2025)
 
 ---
 
 **Alla filer, templates och detaljerade instruktioner finns tillgängliga i GitHub-repot.**
-
-

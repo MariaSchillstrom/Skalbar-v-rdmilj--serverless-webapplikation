@@ -64,8 +64,6 @@
 
 https://i.imgur.com/kmkOb60.png
 
-
-
 ---
 
 **✅ Klart!** Nu har du en DynamoDB-tabell med svampdata som kan användas i din serverless applikation.
@@ -76,8 +74,6 @@ https://i.imgur.com/kmkOb60.png
 
 Baserad på lärarens tutorial:  
 https://cloud-developer.educ8.se/clo/3.-scalable-cloud-applications/1.-tutorials/6.-create-a-serverless-webapp-on-aws-greetings/index.html
-
-
 
 
 
@@ -283,5 +279,5 @@ Din serverless webbapplikation är nu komplett! Du har:
 
 ## Referens
 
-Baserad på lärarens tutorial:  
+Baserad på lärarens tutorial, med egna uppdateringar:  
 https://cloud-developer.educ8.se/clo/3.-scalable-cloud-applications/1.-tutorials/6.-create-a-serverless-webapp-on-aws-greetings/index.html
